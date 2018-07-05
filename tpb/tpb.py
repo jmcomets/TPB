@@ -344,7 +344,7 @@ class Torrent(object):
         if self._info is None:
             request = get(str(self.url), headers=headers())
             root = html.fromstring(request.text)
-            info = root.cssselect('#details > .nfo > pre')[0].text_content()
+            info = root.cssselect('#details .nfo > pre')[0].text_content()
             self._info = info
         return self._info
 
